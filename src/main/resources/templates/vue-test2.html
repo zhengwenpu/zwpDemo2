@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../static/js/vue.global.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <buttom-counter></buttom-counter>
+</div>
+</body>
+</html>
+<script>
+    const  app = Vue.createApp({})
+    app.component('buttom-counter',{
+        data(){
+            return{count:0}
+        },
+        template:
+            '<button @click="count++"> 点了{{count}}次</button>'
+    })
+app.mount('#app')
+</script>

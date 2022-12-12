@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <script src="../static/js/vue.global.min.js"></script>
+</head>
+<body>
+<div id="hello-vue" class="demo">
+    <span>{{message}}</span>
+    <input v-model="message">
+</div>
+<div id="hello-vue2" class="demo2">
+    <p><a v-bind:href="url">菜鸟教程</a></p>
+</div>
+<div id="hello-vue3" class="demo3">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">反转</button>
+</div>
+</body>
+</html>
+<script>
+    const HelloVueApp = {
+        data() {
+            return {
+                message: 'Hello Vue!!'
+            }
+        }
+    }
+Vue.createApp(HelloVueApp).mount('#hello-vue')
+
+    const TestApp2 = {
+        data(){
+            return{
+                url:'www.baidu.com'
+            }
+        }
+    }
+    Vue.createApp(TestApp2).mount('#hello-vue2')
+
+    const TestApp3 = {
+        data(){
+            return{
+                message: 'abcdefgh'
+            }
+        },
+        methods:{
+            reverseMessage(){
+                this.message=this.message.split('').reverse().join('')
+            }
+        }
+    }
+    Vue.createApp(TestApp3).mount('#hello-vue3')
+</script>
